@@ -37,6 +37,10 @@ public class GitHubRepo implements Serializable {
 	private String gitUrl;
 	private String sshUrl;
 	private String svnUrl;
+	private Boolean privateRepo;
+	private Boolean fork;
+	private Integer forks;
+	private Integer watchers;
 	
 	public Long getId() { return id; }
 	
@@ -78,5 +82,21 @@ public class GitHubRepo implements Serializable {
 	public String getSvnUrl() { return svnUrl; }
 	
 	public void setSvnUrl(String svnUrl) { this.svnUrl = svnUrl; }
+	
+	@JsonProperty("private")
+	public Boolean isPrivateRepo() { return privateRepo; }
+	public void setPrivateRepo(Boolean priv) { this.privateRepo = priv; }
+	
+	@JsonProperty("fork")
+	public Boolean isFork() { return fork; }
+	public void setFork(Boolean fork) { this.fork = fork; }
+	
+	@JsonProperty("forks")
+	public Integer getForks() { return forks; }
+	public void setForks(Integer forks) { this.forks = forks; }
+	
+	@JsonProperty("watchers")
+	public Integer getWatchers() { return watchers; }
+	public void setWatchers(Integer watchers) { this.watchers = watchers; }
 	
 }
